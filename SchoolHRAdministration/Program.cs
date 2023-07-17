@@ -11,12 +11,12 @@ namespace SchoolHRAdministration
 
             SeedData(employees);
 
-            foreach (var employee in employees) 
-            {
-                totalSalaries += employee.Salary;
-            }
+            //foreach (var employee in employees) 
+            //{
+            //    totalSalaries += employee.Salary;
+            //}
 
-            Console.WriteLine($"Total Annual Salaries Including Bouns: {totalSalaries}"); ;
+            Console.WriteLine($"Total Annual Salaries Including Bouns: {employees.Sum(c => c.Salary)}"); ;
 
 
         }
@@ -72,21 +72,21 @@ namespace SchoolHRAdministration
 
     public class Teacher:EmployeeBase
     {
-        public override decimal Salary { get => base.Salary + (base.Salary * 0.2m); }
+        public override decimal Salary { get => base.Salary + (base.Salary * 0.02m); }
     }
 
     public class HeadOfDepartment : EmployeeBase 
     {
-        public override decimal Salary { get => base.Salary + (base.Salary * 0.3m); }
+        public override decimal Salary { get => base.Salary + (base.Salary * 0.03m); }
     }
 
     public class DeputyHeadMaster : EmployeeBase 
     {
-        public override decimal Salary { get => base.Salary + (base.Salary * 0.4m); }
+        public override decimal Salary { get => base.Salary + (base.Salary * 0.04m); }
     }
 
     public class HeadMaster : EmployeeBase
     {
-        public override decimal Salary { get => base.Salary + (base.Salary * 0.5m); }
+        public override decimal Salary { get => base.Salary + (base.Salary * 0.05m); }
     }
 }
